@@ -1,0 +1,332 @@
+:root {
+    --navy: #002366;
+    --grey: #808080;
+    --light-grey: #f5f5f5;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: var(--light-grey);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  html {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  .top-bar {
+    background: white;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 1rem;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* optional spacing between image and heading */
+    font-weight: bold;
+    color: var(--navy);
+    font-size: 1.8rem;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .contact-info span {
+      flex: 1 1 100%;
+      margin-left: 0;
+      font-size: 0.85rem;
+    }
+  }
+  .navbar {
+    background: var(--navy);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, border-radius 0.3s;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    background: var(--grey);
+    border-radius: 4px;
+  }
+  
+  .page-section {
+    padding: 1rem 2rem;
+    min-height: 70vh;
+  }
+  
+  .about-block,
+  .info-block {
+    background: white;
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
+  .slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .contact-form {
+    background: white;
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+  }
+  
+  button {
+    background: var(--navy);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: var(--grey);
+  }
+  
+  @media (max-width: 768px) {
+    .top-bar {
+      padding: 1rem;
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
+      justify-content: center;
+    }
+  
+    .logo img {
+      display: none;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      position: static; /* remove sticky on mobile */
+    }
+  }
+  
+  
+  .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .item-card {
+    background: white;
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 16px;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    .about-block,
+    .info-block,
+    .item-card {
+      padding: 1rem;
+    }
+  
+    .item-card h2 {
+      font-size: 1.3rem;
+    }
+  
+    .item-card p,
+    .item-card ul {
+      font-size: 0.95rem;
+    }
+  }
+  .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .item-card h2 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+  
+  .item-card p, .item-card ul {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .item-card ul {
+    padding-left: 1.5rem;
+  }
+  
+  .item-card li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  img {
+    max-height: 70px;
+    max-width: 100px;
+  }
+
+  .contact-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+
+  .contact-container h2 {
+    color: var(--navy, #002f5f);
+    margin-bottom: 1rem;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--navy, #002f5f);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background-color: #004080;
+  }
+  .footer-bar {
+    background-color: #002f5f; /* navy or match your theme */
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bar a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .footer-bar .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  @media (min-width: 600px) {
+    .footer-bar .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .apex-logo {
+    max-width: 30px;
+    max-height: 30px;
+  }
