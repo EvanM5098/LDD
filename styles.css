@@ -13,6 +13,7 @@
   
   body {
     background-color: var(--light-grey);
+    background-image: url(/Images/Background-image.png);
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
@@ -92,10 +93,13 @@
     border-radius: 4px;
   }
   
-  .page-section {
-    padding: 1rem 2rem;
-    min-height: 70vh;
-  }
+ .page-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
   
   .about-block,
   .info-block {
@@ -249,7 +253,7 @@
     }
   }
   
-  img {
+  .logo img {
     max-height: 70px;
     max-width: 100px;
   }
@@ -330,3 +334,15 @@
     max-width: 30px;
     max-height: 30px;
   }
+
+.left, .right {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+.legal-images {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
