@@ -272,7 +272,25 @@
     color: var(--navy, #002f5f);
     margin-bottom: 1rem;
   }
+  @media (max-width: 600px) {
+  .contact-container {
+    padding: 1rem;
+  }
 
+  .contact-form button {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .item-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .item-card p,
+  .item-card ul {
+    font-size: 0.9rem;
+  }
+}
   .contact-form label {
     display: block;
     margin-top: 1rem;
@@ -345,4 +363,25 @@
   display: block;
   margin-bottom: 20px;
   border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .legal-images {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .left, .right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  body, html {
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+}
+@media (max-width: 768px) {
+  .page-section {
+    padding: 1rem;
+    flex-direction: column;
+  }
 }
